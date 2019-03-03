@@ -6,6 +6,8 @@
  */
 function greet(name) {
   // Your code here
+  console.log(`Hello`);
+  console.log(`Hello ${name}`);
 }
 
 /**
@@ -15,6 +17,11 @@ function greet(name) {
  */
 function isOdd(n) {
   // Your code here
+  if (n % 2 !== 0) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 /**
@@ -30,6 +37,7 @@ function isOdd(n) {
  */
 function oddsSmallerThan(n) {
   // Your code here
+  return parseInt(n / 2);
 }
 
 /**
@@ -44,6 +52,11 @@ function oddsSmallerThan(n) {
  */
 function squareOrDouble(n) {
   // Your code here
+  if (isOdd(n)) {
+    return n * n;
+  } else {
+    return n * 2;
+  }
 }
 
 /**
@@ -64,7 +77,13 @@ function squareOrDouble(n) {
  */
 function ageFromBirthDate(birthDate) {
   const _MS_PER_YEAR = 1000 * 60 * 60 * 24 * 365;
-
+  let birthYear = birthDate.slice(0, 4);
+  let birthMonth = birthDate.slice(4, 6);
+  let birthDay = birthDate.slice(6, 8);
+  let dateOfBirth = new Date(birthYear + "-" + birthMonth + "-" + birthDay);
+  let ageDifMs = Date.now() - dateOfBirth;
+  let age = ageDifMs / _MS_PER_YEAR; // miliseconds from epoch
+  return parseInt(age);
   // Your code here
 }
 
