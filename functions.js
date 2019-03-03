@@ -17,11 +17,12 @@ function greet(name) {
  */
 function isOdd(n) {
   // Your code here
-  if (n % 2 !== 0) {
-    return true;
-  } else {
-    return false;
-  }
+  // if (n % 2 !== 0) {
+  //   return true;
+  // } else {
+  //   return false;
+  // }
+  return n % 2 !== 0;
 }
 
 /**
@@ -81,6 +82,7 @@ function ageFromBirthDate(birthDate) {
   let birthMonth = birthDate.slice(4, 6);
   let birthDay = birthDate.slice(6, 8);
   let dateOfBirth = new Date(birthYear + "-" + birthMonth + "-" + birthDay);
+  //let dateOfBirth = new Date(birthYear, birthMonth - 1, birthDay); // this also work
   let ageDifMs = Date.now() - dateOfBirth;
   let age = ageDifMs / _MS_PER_YEAR; // miliseconds from epoch
   return parseInt(age);
